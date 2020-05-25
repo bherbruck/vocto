@@ -1,6 +1,6 @@
 import argparse
 
-from __init__ import *
+from vocto import *
 
 parser = argparse.ArgumentParser(
     description='Create images from a VOC dataset')
