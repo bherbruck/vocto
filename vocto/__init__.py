@@ -3,7 +3,6 @@ import json
 import os
 
 import xmltodict
-
 from PIL import Image
 
 DATASET_DIR = './data'
