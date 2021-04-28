@@ -12,7 +12,8 @@ ANN_DIR = './data'  # TODO
 IMG_DIR = './data'  # TODO
 
 
-def get_dataset(dataset_dir=DATASET_DIR):
+def get_dataset(directory=None):
+    dataset_dir = directory or DATASET_DIR
     files = glob.glob(os.path.join(dataset_dir, '*.xml'))
     dataset = {'dataset_dir': dataset_dir,
                'annotations': [get_data(read_xml(file)) for file in files]}
@@ -49,7 +50,8 @@ def get_box(element):
     return data
 
 
-def write_images(dataset, output_dir=OUTPUT_DIR):
+def write_images(dataset, directory=None):
+    output_dir = directory or OUTPUT_DIR
     mkdir_safe(output_dir)
     for ann in dataset['annotations']:
         img = Image.open(os.path.join(dataset['dataset_dir'],
